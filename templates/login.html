@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Login</title>
+<a href="{{ url_for('register_page') }}">Create Account</a>
+<a href="{{ url_for('index') }}", style="padding-left: 10px;">TaskMaster</a>
+
+{% endblock %}
+
+{% block body %}
+<div class="container" style="text-align: center">
+    <form method="POST" class="form-signin">
+        {{ form.hidden_tag() }}
+        <h1>Please Login</h1>
+        <br>
+        {{ form.username.label()}}
+        {{ form.username(placeholder="username") }}
+
+        {{ form.password.label() }}
+        {{ form.password(placeholder="password")}}
+
+        {{ form.submit }}
+    </form>
+
+</div>
+
+{% endblock %}
